@@ -4,9 +4,15 @@ const Blog = require('./model/blogModel')
 const app = express()
 require('dotenv').config()
 const fs = require('fs')
+const cors = require('cors')
 // access file data
 app.use(express.json())
 app.use(express.static('./storage'))
+app.use(cors(
+    {
+        origin:'http://localhost:5173'
+    }
+))
 
 const {multer,storage} =require('./middleware/multerConfig')
 const upload =multer({storage:storage})
