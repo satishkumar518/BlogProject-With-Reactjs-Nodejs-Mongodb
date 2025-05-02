@@ -18,14 +18,15 @@ const Home = () => {
             <Navbar/>
             <div className="p-6 m-2 flex flex-wrap justify-center gap-4 ">
                 {
-                    blogs.map((blog)=>{
+                    blogs.map((blog,index)=>{
                         return(
-                            <Card blog={blog}/>
+                            <Card key={index} blog={blog}/>
                         )
                     })
                 }
             
             </div>
+            
         </>
     )
 }
